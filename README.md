@@ -5,7 +5,7 @@
 <p align="center">
   <strong>Emoji Keyboard for React Native, using native primitives.
 </strong><br>
-This is a fork of <a href="https://github.com/okwasniewski/@abdoalghoul/react-native-emoji-keyboard">okwasniewski/react-native-emoji-popup</a>
+This is a fork of <a href="https://github.com/okwasniewski/react-native-emoji-popup">okwasniewski/react-native-emoji-popup</a>
 </p>
 
 <div align="center">
