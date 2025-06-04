@@ -1,27 +1,21 @@
-import type { StyleProp, ViewStyle } from 'react-native';
-
-type CloseButtonProps = {
-  close: () => void;
-};
+import type { ReactNode } from 'react';
+import type { ViewProps } from 'react-native';
 
 export interface EmojiPopupProps {
-  /*
-   * A React node that will be rendered as the trigger of the EmojiPopup.
-   */
-  children: React.ReactNode;
   /*
    * A function that will be called when an emoji is selected.
    */
   onEmojiSelected: (emoji: string) => void;
   /*
-   * A function that returns a React node to be rendered as the close button.
-   * @platform android
+   * The style of the emoji view.
    */
-  closeButton?: (props: CloseButtonProps) => React.ReactNode;
-
+  emojiViewStyle?: ViewProps['style'];
   /*
-   * Content container style.
-   * @platform android
+   * The style of the container view.
    */
-  contentContainerStyle?: StyleProp<ViewStyle>;
+  containerStyle?: ViewProps['style'];
+  /*
+   * The children of the emoji popup (rendered before the emoji view).
+   */
+  children?: ReactNode;
 }
