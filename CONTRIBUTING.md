@@ -26,12 +26,12 @@ It is configured to use the local version of the library, so any changes you mak
 For development, you need to use the official IDEs:
 
 For iOS:
-- Open `example/ios/EmojiPopupExample.xcworkspace` in Xcode
-- Navigate to `Pods > Development Pods > react-native-emoji-popup` to find the Objective-C/Swift source files
+- Open `example/ios/EmojiKeyboardExample.xcworkspace` in Xcode
+- Navigate to `Pods > Development Pods > @abdoalghoul/react-native-emoji-keyboard` to find the Objective-C/Swift source files
 
 For Android:
 - Open `example/android` in Android Studio
-- Find the source files under `react-native-emoji-popup` in the Android view
+- Find the source files under `@abdoalghoul/react-native-emoji-keyboard` in the Android view
 
 Using these IDEs is recommended as they provide the proper development environment, debugging tools, and ensure compatibility with the native platforms.
 
@@ -44,7 +44,7 @@ yarn example start
 To confirm that the app is running with the new architecture, you can check the Metro logs for a message like this:
 
 ```sh
-Running "EmojiPopupExample" with {"fabric":true,"initialProps":{"concurrentRoot":true},"rootTag":1}
+Running "EmojiKeyboardExample" with {"fabric":true,"initialProps":{"concurrentRoot":true},"rootTag":1}
 ```
 
 Note the `"fabric":true` and `"concurrentRoot":true` properties.
