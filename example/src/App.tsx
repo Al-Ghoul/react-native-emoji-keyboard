@@ -1,39 +1,41 @@
 import { useState } from 'react';
-import {
-  View,
-  StyleSheet,
-  TextInput,
-  Text,
-  Platform,
-  Pressable,
-} from 'react-native';
+import { View, StyleSheet, Text, Pressable } from 'react-native';
 import { EmojiPopup } from 'react-native-emoji-popup';
-
-const CloseButton = ({ close }: { close: () => void }) => (
-  <Pressable onPress={close}>
-    <Text style={styles.buttonText}>Close ❌</Text>
-  </Pressable>
-);
 
 export default function App() {
   const [emoji, setEmoji] = useState('🫡');
 
+  const setEmojiHandler = (emojiInput: string) => {
+    setEmoji((prev) => prev + emojiInput);
+  };
+
+  const clearInput = () => {
+    setEmoji('');
+  };
+
+  const deleteLastEmoji = () => {
+    if (emoji.length > 0) {
+      setEmoji(emoji.slice(0, -2));
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 30, marginBottom: 20 }}>
-        React Native Emoji Popup ✨
-      </Text>
-      <TextInput value={emoji} style={{ fontSize: 50 }} />
-      <EmojiPopup onEmojiSelected={setEmoji}>
-        <Text style={styles.buttonText}>Open Emoji Picker</Text>
+      <Text style={styles.emojiText}>{emoji}</Text>
+      <EmojiPopup
+        containerStyle={styles.emojiContainer}
+        emojiViewStyle={styles.emojiView}
+        onEmojiSelected={setEmojiHandler}
+      >
+        <View style={styles.buttonsView}>
+          <Pressable style={styles.buttonText} onPress={clearInput}>
+            <Text>Clear</Text>
+          </Pressable>
+          <Pressable style={styles.buttonText} onPress={deleteLastEmoji}>
+            <Text>Delete</Text>
+          </Pressable>
+        </View>
       </EmojiPopup>
-      {Platform.OS === 'android' && (
-        <EmojiPopup onEmojiSelected={setEmoji} closeButton={CloseButton}>
-          <Text style={styles.buttonText}>
-            Open Emoji Picker With Custom Close button
-          </Text>
-        </EmojiPopup>
-      )}
     </View>
   );
 }
@@ -41,13 +43,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  modalView: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingTop: 50,
+  buttonsView: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 10,
   },
   buttonText: {
     color: 'white',
@@ -55,5 +55,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#2196F3',
     padding: 10,
     borderRadius: 5,
+  },
+  emojiText: {
+    fontSize: 30,
+    textAlign: 'center',
+  },
+  emojiContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  emojiView: {
+    height: 500,
   },
 });
