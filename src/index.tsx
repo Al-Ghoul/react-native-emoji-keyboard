@@ -1,1 +1,1 @@
-export { default as EmojiPopup } from './EmojiPopup';
+export { default as EmojiKeyboard } from './EmojiKeyboard';

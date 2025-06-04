@@ -6,4 +6,4 @@ interface NativeProps extends ViewProps {
   onEmojiSelected: DirectEventHandler<{ emoji: string }>;
 }
 
-export default codegenNativeComponent<NativeProps>('EmojiPopupView');
+export default codegenNativeComponent<NativeProps>('EmojiKeyboardView');

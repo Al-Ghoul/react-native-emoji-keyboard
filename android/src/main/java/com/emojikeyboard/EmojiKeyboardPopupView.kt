@@ -1,4 +1,4 @@
-package com.emojipopup
+package com.emoji_keyboard
 
 import android.content.Context
 import android.content.res.Configuration
@@ -6,7 +6,7 @@ import android.widget.FrameLayout
 import androidx.annotation.UiThread
 import androidx.emoji2.emojipicker.EmojiPickerView
 
-class EmojiPopupView(context: Context) : FrameLayout(context) {
+class EmojiKeyboardView(context: Context) : FrameLayout(context) {
   private lateinit var emojiPickerView: EmojiPickerView
   var onEmojiSelectedListener: ((emoji: String) -> Unit)? = null
 

@@ -1,6 +1,6 @@
 buildscript {
   ext.getExtOrDefault = {name ->
-    return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['EmojiPopup_' + name]
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['EmojiKeyboard_' + name]
   }
 
   repositories {
@@ -28,7 +28,7 @@ if (isNewArchitectureEnabled()) {
 }
 
 def getExtOrIntegerDefault(name) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["EmojiPopup_" + name]).toInteger()
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["EmojiKeyboard_" + name]).toInteger()
 }
 
 def supportsNamespace() {
@@ -42,7 +42,7 @@ def supportsNamespace() {
 
 android {
   if (supportsNamespace()) {
-    namespace "com.emojipopup"
+    namespace "com.emoji_keyboard"
 
     sourceSets {
       main {
@@ -109,7 +109,7 @@ dependencies {
 if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
-    libraryName = "EmojiPopupView"
-    codegenJavaPackageName = "com.emojipopup"
+    libraryName = "EmojiKeyboardView"
+    codegenJavaPackageName = "com.emoji_keyboard"
   }
 }

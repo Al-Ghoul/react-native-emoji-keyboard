@@ -1,17 +1,17 @@
 import { View } from 'react-native';
-import EmojiPopupView from './EmojiPopupViewNativeComponent';
-import type { EmojiPopupProps } from './types';
+import EmojiKeyboardView from './EmojiKeyboardViewNativeComponent';
+import type { EmojiKeyboardProps } from './types';
 
-const EmojiPopup = ({
+export default function EmojiKeyboard({
   children,
   containerStyle,
   emojiViewStyle,
   onEmojiSelected,
-}: EmojiPopupProps) => {
+}: EmojiKeyboardProps) {
   return (
     <View style={[containerStyle ? containerStyle : defaultStyles.container]}>
       {children}
-      <EmojiPopupView
+      <EmojiKeyboardView
         onEmojiSelected={({ nativeEvent: { emoji } }) => {
           onEmojiSelected(emoji);
         }}
@@ -19,7 +19,7 @@ const EmojiPopup = ({
       />
     </View>
   );
-};
+}
 
 const defaultStyles = {
   container: {
@@ -29,5 +29,3 @@ const defaultStyles = {
     flex: 1,
   },
 };
-
-export default EmojiPopup;

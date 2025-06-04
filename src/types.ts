@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { ViewProps } from 'react-native';
 
-export interface EmojiPopupProps {
+export interface EmojiKeyboardProps {
   /*
    * A function that will be called when an emoji is selected.
    */
@@ -15,7 +15,7 @@ export interface EmojiPopupProps {
    */
   containerStyle?: ViewProps['style'];
   /*
-   * The children of the emoji popup (rendered before the emoji view).
+   * The children of the emoji view (rendered before the emoji view).
    */
   children?: ReactNode;
 }

@@ -1,4 +1,4 @@
-package com.emojipopup
+package com.emoji_keyboard
 
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.WritableMap

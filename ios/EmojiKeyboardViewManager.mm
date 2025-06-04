@@ -2,25 +2,25 @@
 #import <React/RCTUIManager.h>
 #import "RCTBridge.h"
 
-#if __has_include("EmojiPopup/EmojiPopup-Swift.h")
-#import "EmojiPopup/EmojiPopup-Swift.h"
+#if __has_include("EmojiKeyboard/EmojiKeyboard-Swift.h")
+#import "EmojiKeyboard/EmojiKeyboard-Swift.h"
 #else
-#import "EmojiPopup-Swift.h"
+#import "EmojiKeyboard-Swift.h"
 #endif
 
 
-@interface EmojiPopupViewManager : RCTViewManager<EmojiPopupDelegate>
+@interface EmojiKeyboardViewManager : RCTViewManager<EmojiKeyboardDelegate>
 @end
 
-@implementation EmojiPopupViewManager
+@implementation EmojiKeyboardViewManager
 
-RCT_EXPORT_MODULE(EmojiPopupView)
+RCT_EXPORT_MODULE(EmojiKeyboardView)
 
 RCT_EXPORT_VIEW_PROPERTY(onEmojiSelected, RCTDirectEventBlock)
 
 - (UIView *)view
 {
-  return [[EmojiPopupViewImpl alloc] initWithDelegate:self];
+  return [[EmojiKeyboardViewImpl alloc] initWithDelegate:self];
 }
 
 - (void)didGetEmojiWithEmoji:(NSString *)emoji reactTag:(NSNumber *)reactTag {

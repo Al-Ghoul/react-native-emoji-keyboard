@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, StyleSheet, Text, Pressable } from 'react-native';
-import { EmojiPopup } from 'react-native-emoji-popup';
+import { EmojiKeyboard } from '@abdoalghoul/react-native-emoji-keyboard';
 
 export default function App() {
   const [emoji, setEmoji] = useState('🫡');
@@ -22,7 +22,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.emojiText}>{emoji}</Text>
-      <EmojiPopup
+      <EmojiKeyboard
         containerStyle={styles.emojiContainer}
         emojiViewStyle={styles.emojiView}
         onEmojiSelected={setEmojiHandler}
@@ -35,7 +35,7 @@ export default function App() {
             <Text>Delete</Text>
           </Pressable>
         </View>
-      </EmojiPopup>
+      </EmojiKeyboard>
     </View>
   );
 }

@@ -1,4 +1,4 @@
-package com.emojipopup
+package com.emoji_keyboard
 
 import com.facebook.react.common.MapBuilder
 import com.facebook.react.module.annotations.ReactModule
@@ -6,14 +6,14 @@ import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.UIManagerModule
 
-@ReactModule(name = EmojiPopupViewManager.NAME)
-class EmojiPopupViewManager : SimpleViewManager<EmojiPopupView>() {
+@ReactModule(name = EmojiKeyboardViewManager.NAME)
+class EmojiKeyboardViewManager : SimpleViewManager<EmojiKeyboardView>() {
   override fun getName(): String {
     return NAME
   }
 
-  public override fun createViewInstance(context: ThemedReactContext): EmojiPopupView {
-    val view = EmojiPopupView(context)
+  public override fun createViewInstance(context: ThemedReactContext): EmojiKeyboardView {
+    val view = EmojiKeyboardView(context)
     val eventDispatcher = context.getNativeModule(UIManagerModule::class.java)!!.eventDispatcher
     view.onEmojiSelectedListener = { emoji ->
       eventDispatcher.dispatchEvent(EmojiSelectedEvent(viewTag = view.id, emoji))
@@ -29,6 +29,6 @@ class EmojiPopupViewManager : SimpleViewManager<EmojiPopupView>() {
   }
 
   companion object {
-    const val NAME = "EmojiPopupView"
+    const val NAME = "EmojiKeyboardView"
   }
 }
