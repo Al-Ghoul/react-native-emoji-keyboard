@@ -31,7 +31,7 @@ npm i @abdoalghoul/react-native-emoji-keyboard
 
 ## Usage
 
-The API is simple, just wrap your component with the `EmojiKeyboard` component and pass a callback to the `onEmojiSelected` prop.
+The API is simple, render the `EmojiKeyboard` component and pass a callback to the `onEmojiSelected` prop.
 
 ```js
 import { EmojiKeyboard } from '@abdoalghoul/react-native-emoji-keyboard';
